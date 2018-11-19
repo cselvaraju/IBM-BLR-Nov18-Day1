@@ -1,0 +1,24 @@
+<div>
+  This is the demo component!!
+  <h4>List of Vegetables</h4>
+  <ul>
+    <li *ngFor="let veg of veggies; index as n">
+      Veg - {{ n+1 }} 
+      Name: {{ veg.name }} 
+      Price: {{ veg.price }} 
+      <button (click)="deleteVeg(n)">X</button>
+    </li>
+  </ul>
+  <p></p>
+  <input type="text" [(ngModel)]="message" />
+  Your message is: {{ message }}
+  <p></p>
+  <button (click)="toggleForm()">{{ btnText }}</button>
+  <div *ngIf="toggleFlag">
+    Name: <input type="text" [(ngModel)]="newVegName" /> 
+    <br />
+    Price: <input type="text" [(ngModel)]="newVegPrice" /> 
+    <br />
+    <button (click)="addVeg()">Add Vegetable</button>
+  </div>
+</div>
